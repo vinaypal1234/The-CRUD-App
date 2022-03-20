@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="register.css" />
+  </head>
+  <body>
+    <%-include("../partials/navbar.ejs")%>
+    <section class="register-form">
+      <h2>Fill The Form</h2>
+
+      <hr />
+      <form>
+        <div class="fullname">
+          <input type="text" id="fullname" placeholder=" Full Name" />
+          <span id="fullname-validation" class="validation"></span>
+        </div>
+
+        <!-- <div class="age">
+          <input type="number" id="age" placeholder=" age" />
+          <span id="age-validation" class="validation"></span>
+        </div> -->
+
+        <div class="email">
+          <input type="text" id="email" placeholder=" Email" />
+          <span id="email-validation" class="validation"></span>
+        </div>
+
+        <div class="number">
+          <input type="number" id="number" placeholder=" number" />
+          <span id="number-validation" class="validation"></span>
+        </div>
+
+        <button id="add-btn">Done</button>
+      </form>
+    </section>
+
+    <script src="js/register.js"></script>
+  </body>
+</html>

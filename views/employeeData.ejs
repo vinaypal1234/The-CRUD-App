@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="employeeData.css" />
+  </head>
+  <body>
+    <%-include("../partials/navbar.ejs")%>
+    <table>
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%for(i=0;i < employeeData.length;i++){%>
+        <tr>
+          <td><%=employeeData[i].fullname%></td>
+          <td><%=employeeData[i].email%></td>
+          <td><%=employeeData[i].phone%></td>
+          <td>
+            <span onclick="getEmployeeToEdit('<%=employeeData[i].id%>')"
+              ><i class="bx bxs-edit"></i
+            ></span>
+          </td>
+          <td>
+            <span onclick="deleteEmployee('<%=employeeData[i].id%>')"
+              ><i class="bx bxs-trash-alt"></i
+            ></span>
+          </td>
+        </tr>
+        <%}%>
+      </tbody>
+    </table>
+
+    <div class="edit-popup"></div>
+
+    <script src="js/employeeData.js"></script>
+  </body>
+</html>
